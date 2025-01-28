@@ -9,6 +9,9 @@ function agregarAmigo() {
         alert ("Por favor, inserte un nombre.");
     } else {
         amigos.push(nombreDeAmigo);
+        for(let i = 0;i < amigos.length; i++){
+            asignarTextoElemento('li',nombreDeAmigo);
+        }
         limpiarCaja();
     }
 }
@@ -16,3 +19,15 @@ function agregarAmigo() {
 function limpiarCaja() {
     let valorCaja = document.getElementById('amigo').value = '';
 }
+
+function asignarTextoElemento(elemento,texto) {
+    let elementoHTML = document.getElementById('listaAmigos');
+    elementoHTML.innerHTML = texto;
+    return;
+}
+
+// function amigoHTML() {
+//     for (let i=0, i<amigos.length; i++){
+//         asignarTextoElemento('li',nombreDeAmigo);
+//     }
+// }

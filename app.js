@@ -45,7 +45,7 @@ function sortearAmigo() {
     console.log(numeroAzar);
     let nombreUsuario = prompt('¿Cómo te llamas?');
     
-    if (AmigosSorteados.length == cantidadAmigos) {
+    if (AmigosSorteados.length === cantidadAmigos) {
         resultado('Ya no hay amigos disponibles');
     } else {
         asignarAmigo(numeroAzar,nombreUsuario);
@@ -55,12 +55,13 @@ function sortearAmigo() {
 function asignarAmigo(i,nombreUsuario) {
     let nombreResultado = amigos[i];
     console.log(nombreResultado);
-        if (nombreUsuario == nombreResultado) {
+        if (nombreUsuario == nombreResultado || AmigosSorteados.includes(nombreResultado)) {
             asignarAmigo(Math.floor(Math.random() * amigos.length), nombreUsuario);
         } else{
             resultado(`Tu amigo secreto es ${nombreResultado}`);
             relacionAmigos.push(`El amigo secreto de ${nombreUsuario} es ${nombreResultado}`);
-            amigos = amigos.filter((amigo) => amigo !== nombreResultado);
+            AmigosSorteados.push(nombreResultado);
+            // AmigosSorteados.push(nombreUsuario);
         }
 }
 

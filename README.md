@@ -1,5 +1,6 @@
-
-![amigo-secreto](https://github.com/user-attachments/assets/c0b61a67-f40a-42b1-b803-8d6e0e86fcfb)
+<p align="center">
+<img src="https://github.com/user-attachments/assets/c0b61a67-f40a-42b1-b803-8d6e0e86fcfb">
+</p>
 <h1 align ="center"> Challenge Amigo Secreto </h1>
 <p align="center">
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">

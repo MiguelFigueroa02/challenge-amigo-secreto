@@ -30,16 +30,23 @@ function limpiarCaja() {
 }
 
 function asignarTextoElemento() {
-    let elementoHTML = document.getElementById('listaAmigos');
-    elementoHTML.innerHTML = "";
+    let elementoHTML = limpiarListaAmigos();
+    // elementoHTML.innerHTML = "";
+    limpiarListaAmigos();
     for (let i=0; i<amigos.length; i++){
         let nuevoAmigo = document.createElement("li");
         nuevoAmigo.textContent = amigos[i];
         elementoHTML.appendChild(nuevoAmigo);
     }
 }
+function limpiarListaAmigos() {
+    let valorHTML = document.getElementById('listaAmigos');
+    valorHTML.innerHTML = "";
+    return valorHTML;
+}
 function sortearAmigo() {
     let cantidadAmigos = amigos.length;
+    limpiarListaAmigos();
     // console.log(cantidadAmigos);
     // let numeroAzar = Math.floor(Math.random()*cantidadAmigos);
     // console.log(numeroAzar);

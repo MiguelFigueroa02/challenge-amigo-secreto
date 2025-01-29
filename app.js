@@ -47,6 +47,7 @@ function sortearAmigo() {
     
     if (AmigosSorteados.length === cantidadAmigos) {
         resultado('Ya no hay amigos disponibles');
+        document.querySelector('#boton-sortear').setAttribute('disabled','true');
     } else {
         asignarAmigo(numeroAzar,nombreUsuario);
     }

@@ -40,18 +40,36 @@ function asignarTextoElemento() {
 }
 function sortearAmigo() {
     let cantidadAmigos = amigos.length;
-    console.log(cantidadAmigos);
-    let numeroAzar = Math.floor(Math.random()*cantidadAmigos);
-    console.log(numeroAzar);
-    let nombreUsuario = prompt('¿Cómo te llamas?');
-    
+    // console.log(cantidadAmigos);
+    // let numeroAzar = Math.floor(Math.random()*cantidadAmigos);
+    // console.log(numeroAzar);
+    // let nombreUsuario = prompt('¿Cómo te llamas?');
     if (AmigosSorteados.length === cantidadAmigos) {
         resultado('Ya no hay amigos disponibles');
         document.querySelector('#boton-sortear').setAttribute('disabled','true');
     } else {
-        asignarAmigo(numeroAzar,nombreUsuario);
+        // let cantidadAmigos = amigos.length;
+        console.log(cantidadAmigos);
+        let numeroAzar = Math.floor(Math.random()*cantidadAmigos);
+        console.log(numeroAzar);
+        let nombreUsuario = prompt('¿Cómo te llamas?');
+        if (amigos.includes(nombreUsuario)) {
+            asignarAmigo(numeroAzar,nombreUsuario);
+        } else {
+            alert(`Hola ${nombreUsuario}. No estás incluido entre los amigos`)
+        }
     }
     
+    // if (amigos.includes(nombreUsuario)) {
+    //     if (AmigosSorteados.length === cantidadAmigos) {
+    //         resultado('Ya no hay amigos disponibles');
+    //         document.querySelector('#boton-sortear').setAttribute('disabled','true');
+    //     } else {
+    //         asignarAmigo(numeroAzar,nombreUsuario);
+    //     }
+    // } else {
+    //     alert(`Hola ${nombreUsuario}. No estás incluido entre los amigos`)
+    // }
 }
 function asignarAmigo(i,nombreUsuario) {
     let nombreResultado = amigos[i];

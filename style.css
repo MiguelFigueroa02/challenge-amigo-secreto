@@ -17,12 +17,26 @@
 
 body {
     height: 100vh;
-    background-color: var(--color-primary);
+    /* background-color: var(--color-primary); */
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(-45deg,  #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    height: 100vh;
+    animation: gradient 10s ease infinite;
 }
-
+@keyframes gradient {
+    0%{
+		background-position: 0% 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 .main-content {
     display: flex;
     flex-direction: column;
@@ -32,13 +46,19 @@ body {
 
 /* Banner */
 .header-banner {
+    width: 100%;
+    box-sizing: border-box;
     flex: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 0;
+    padding: 2% 0 0;
 }
-
+.header-banner img{
+    /* width:auto; */
+    /* height: 80%; */
+    height: auto;
+}
 /* Sección de entrada */
 .input-section {
     flex: 60%;
@@ -54,7 +74,7 @@ body {
 
 /* Títulos */
 .main-title {
-    font-size: 48px;
+    font-size: 3em;
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
@@ -184,4 +204,10 @@ ul {
 }
 .Aceptar-mostrado:hover{
     background-color: #929292;
+}
+@media (max-width: 800px){
+    .header-banner {
+        flex-direction: column;
+        width: 90%;
+    }
 }
